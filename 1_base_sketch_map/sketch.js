@@ -45,8 +45,9 @@ function draw () {
 	// background(100);
 	clear();
 	//data.features[0].geometry.coordinates[0]
+	stroke(255)
 	for(let i=0;i<data.features.length;i++){
-		for(let j=1;data.features[i].geometry.coordinates.length;j++){
+		for(let j=1; j< data.features[i].geometry.coordinates.length;j++){
 			let start=data.features[i].geometry.coordinates[j-1];
 			let end=data.features[i].geometry.coordinates[j];
 			let s=myMap.latLngToPixel(start[1], start[0]);
