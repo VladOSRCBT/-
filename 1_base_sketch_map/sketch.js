@@ -72,7 +72,7 @@ function drawStations() {
 }
 
 function drawRail() {
-	stroke(255)
+	stroke(255);
 	for (let i = 0; i < data.features.length; i++) {
 		for (let j = 1; j < data.features[i].geometry.coordinates.length; j++) {
 			let start = data.features[i].geometry.coordinates[j - 1];
@@ -83,6 +83,13 @@ function drawRail() {
 			
 			if(mouseOverLine(createVector(s.x, s.y), createVector(e.x, e.y))) {
 				strokeWeight(5);
+				// console.log(data.features[i].properties.Layer);
+				let l = data.features[i].properties.Layer;
+				if(l == 'r') stroke(255,0, 0);
+				if(l == 'g') stroke(0, 255, 0);
+				if(l == 'y') stroke(0, 0, 255);
+				if(l == 'hd') stroke(255, 255, 0);
+				// stroke(2)
 			} else {
 				strokeWeight(1);
 			}
